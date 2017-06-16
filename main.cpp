@@ -1,9 +1,6 @@
-#include <iostream>
 #include "SimulatedAnnealing.h"
 
-int main() {
-    SimulatedAnnealing sa(3);
-    std::cout << sa.get_number();
+int main () {
+    readInstance("../InstanciasBEP/InstanceBEP-1-5-3-6.txt");
     return 0;
-
 }

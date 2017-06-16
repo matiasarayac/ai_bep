@@ -4,6 +4,23 @@
 
 #include "SimulatedAnnealing.h"
 
-SimulatedAnnealing::SimulatedAnnealing(int a) {
-    number = a;
+void readInstance(string instance){
+    string line;
+    int bus;
+    int i = 0;
+    ifstream myfile (instance);
+    if (myfile.is_open())
+    {
+        while ( getline (myfile,line) )
+        {
+            if(i == 0){
+                bus = line[0] - 48;
+            }
+            i++;
+        }
+        myfile.close();
+    }
+
+    else cout << "Unable to open file";
 }
+
