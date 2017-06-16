@@ -1,0 +1,20 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/matiasaraya/Documents/Projects/ia_simulatedAnnealing/SimulatedAnnealing.cpp
+SimulatedAnnealing.h
+/Users/matiasaraya/Documents/Projects/ia_simulatedAnnealing/SimulatedAnnealing.h
+
+/Users/matiasaraya/Documents/Projects/ia_simulatedAnnealing/SimulatedAnnealing.h
+
+/Users/matiasaraya/Documents/Projects/ia_simulatedAnnealing/main.cpp
+iostream
+-
+SimulatedAnnealing.h
+/Users/matiasaraya/Documents/Projects/ia_simulatedAnnealing/SimulatedAnnealing.h
+
