@@ -5,8 +5,6 @@
 
 Bep::Bep(string instance) {
     string line;
-    string Sbus_capacity;
-    string Sbuses;
     int i = 0;
     string token;
     string token2;
@@ -17,17 +15,60 @@ Bep::Bep(string instance) {
             while (getline(iss, token, ' ')) {
                 istringstream isi(token);
                 while (getline(isi, token2, ':')) {
-//                    cout << token2 << endl;
                     if (i == 0) buses = stoi(token2);
                     else if (i == 1) bus_capacity = stoi(token2);
                     else if (i == 2) {
                         sources = stoi(token2);
-                        for (int j = 0; j <= sources; j++) {
+                        for (int j = 0; j < sources; j++) {
                             getline(iss, token, ' ');
-                            sources_capacity[j] = stoi(token);
+                            sources_capacity.push_back(stoi(token));
+                        }
+                    } else if (i == 3) collections = stoi(token2);
+                    else if (i == 4) {
+                        p_total = stoi(token2);
+                        for (int j = 0; j < collections; j++) {
+                            getline(iss, token, ' ');
+                            p_collections.push_back(stoi(token));
+                        }
+                    } else if (i == 5) shelters = stoi(token2);
+                    else if (i == 6) {
+                        shelters_total = stoi(token2);
+                        for (int j = 0; j < shelters; j++) {
+                            getline(iss, token, ' ');
+                            shelters_capacity.push_back(stoi(token));
+                        }
+                    } else if (i == 9) {
+                        for (int k = 0; k < sources; k++) {
+                            vector<int> v;
+                            if (k == 0) {
+                                v.push_back(stoi(token2));
+                                for (int j = 0; j < (collections - 1); j++) {
+
+                                    getline(iss, token, ' ');
+                                    v.push_back(stoi(token));
+                                }
+
+                                d_sources_collections.push_back(v);
+
+                            } else {
+                                getline(iss, token, ' ');
+
+                                getline(myfile, line);
+                                istringstream iss2(line);
+                                getline(iss2, token, ' ');
+                                istringstream isi2(token);
+                                getline(isi2, token2, ':');
+
+                                for (int j = 0; j < collections; j++) {
+                                    getline(iss2, token, ' ');
+                                    v.push_back(stoi(token));
+                                }
+
+                                d_sources_collections.push_back(v);
+                            }
+
                         }
                     }
-
                     i++;
                 }
             }
@@ -36,10 +77,20 @@ Bep::Bep(string instance) {
     } else cout << "Unable to open file";
 }
 
-void Bep::printSourcesCapacity() {
-    for (int i = 0; i < sources; i++) {
-        cout << sources_capacity[i];
+void Bep::printVector(vector<int> v, int length) {
+    for (int i = 0; i < length; i++) {
+        cout << v[i];
         cout << " ";
     }
     cout << "" << endl;
+}
+
+void Bep::printMatrix(vector<vector<int>> m, int vector, int length) {
+    for (int i = 0; i < vector; i++) {
+        for (int j = 0; j < length; j++) {
+            cout << m[i][j];
+            cout << " ";
+        }
+        cout << " " << endl;
+    }
 }
