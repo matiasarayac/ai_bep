@@ -27,6 +27,7 @@ public:
     vector<int>p_collections;
     vector<int>shelters_capacity;
     vector<vector<int>> d_sources_collections;
+    vector<vector<int>> d_collections_shelters;
 
     Bep(string);
 

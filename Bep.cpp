@@ -37,36 +37,48 @@ Bep::Bep(string instance) {
                             getline(iss, token, ' ');
                             shelters_capacity.push_back(stoi(token));
                         }
-                    } else if (i == 9) {
+                    } else if (i == 8) {
                         for (int k = 0; k < sources; k++) {
                             vector<int> v;
                             if (k == 0) {
-                                v.push_back(stoi(token2));
-                                for (int j = 0; j < (collections - 1); j++) {
-
+                                for (int j = 0; j < collections; j++) {
                                     getline(iss, token, ' ');
                                     v.push_back(stoi(token));
                                 }
 
-                                d_sources_collections.push_back(v);
-
                             } else {
-                                getline(iss, token, ' ');
-
                                 getline(myfile, line);
                                 istringstream iss2(line);
-                                getline(iss2, token, ' ');
-                                istringstream isi2(token);
-                                getline(isi2, token2, ':');
+                                getline(iss2, token, ' '); // Número con :
 
                                 for (int j = 0; j < collections; j++) {
                                     getline(iss2, token, ' ');
                                     v.push_back(stoi(token));
                                 }
-
-                                d_sources_collections.push_back(v);
                             }
 
+                            d_sources_collections.push_back(v);
+                        }
+                    } else if (i == 11) {
+                        for (int k = 0; k < collections; k++) {
+                            vector<int> v;
+                            if (k == 0) {
+                                for (int j = 0; j < shelters; j++) {
+                                    getline(iss, token, ' ');
+                                    v.push_back(stoi(token));
+                                }
+                            } else {
+                                getline(myfile, line);
+                                istringstream iss2(line);
+                                getline(iss2, token, ' ');
+
+                                for (int j = 0; j < shelters; j++) {
+                                    getline(iss2, token, ' ');
+                                    v.push_back(stoi(token));
+                                }
+                            }
+
+                            d_collections_shelters.push_back(v);
                         }
                     }
                     i++;

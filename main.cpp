@@ -1,7 +1,7 @@
 #include "Bep.h"
 
 int main () {
-    Bep b("../InstanciasBEP/InstanceBEP-3-11-10-7.txt");
+    Bep b("../InstanciasBEP/InstanceBEP-1-4-2-4.txt");
     cout << b.getBus() << endl;
     cout << b.getBusCapacity() << endl;
     cout << b.getSources() << endl;
@@ -13,5 +13,6 @@ int main () {
     cout << b.getSheltersTotal() << endl;
     b.printVector(b.shelters_capacity, b.getShelters());
     b.printMatrix(b.d_sources_collections, b.getSources(), b.getCollections());
+    b.printMatrix(b.d_collections_shelters, b.getCollections(), b.getShelters());
     return 0;
 }
