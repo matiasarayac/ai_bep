@@ -5,12 +5,7 @@
 #ifndef IA_SIMULATEDANNEALING_BEP_H
 #define IA_SIMULATEDANNEALING_BEP_H
 
-#include <iostream>
-#include <fstream>
-#include <string>
-#include <sstream>
-#include <vector>
-using namespace std;
+#include "includes.h"
 
 class Bep {
     int buses;
@@ -38,9 +33,10 @@ public:
     int getPeopleTotal(){return p_total;};
     int getShelters(){return shelters;};
     int getSheltersTotal(){return shelters_total;};
-    void printVector(vector<int>, int);
-    void printMatrix(vector<vector<int>>, int, int);
 };
+
+void printVector(vector<int>, int);
+void printMatrix(vector<vector<int>>);
 
 
 #endif //IA_SIMULATEDANNEALING_BEP_H

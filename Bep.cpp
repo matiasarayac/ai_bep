@@ -89,7 +89,7 @@ Bep::Bep(string instance) {
     } else cout << "Unable to open file";
 }
 
-void Bep::printVector(vector<int> v, int length) {
+void printVector(vector<int> v, int length) {
     for (int i = 0; i < length; i++) {
         cout << v[i];
         cout << " ";
@@ -97,9 +97,9 @@ void Bep::printVector(vector<int> v, int length) {
     cout << "" << endl;
 }
 
-void Bep::printMatrix(vector<vector<int>> m, int vector, int length) {
-    for (int i = 0; i < vector; i++) {
-        for (int j = 0; j < length; j++) {
+void printMatrix(vector<vector<int>> m) {
+    for (int i = 0; i < m.size(); i++) {
+        for (int j = 0; j < m[i].size(); j++) {
             cout << m[i][j];
             cout << " ";
         }
