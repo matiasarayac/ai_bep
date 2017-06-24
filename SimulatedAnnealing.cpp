@@ -94,14 +94,14 @@ void SimulatedAnnealing::printSolution(vector<vector<vector<int> > > sol, vector
     string collections = to_string(b.getCollections());
     string shelters = to_string(b.getShelters());
     string buses = to_string(b.getBus());
-    file = "InstanceBEP-" + sources + "-" + collections + "-" + shelters +"-"+ buses + ".txt";
+    file = "results/InstanceBEP-" + sources + "-" + collections + "-" + shelters +"-"+ buses + ".txt";
     solfile.open(file);
 
     for (int i = 0; i < sol.size(); i++) {
-        cout << i + 1;
-        cout << " ";
-        cout << qualityBuses[i];
-        cout << " ";
+//        cout << i + 1;
+//        cout << " ";
+//        cout << qualityBuses[i];
+//        cout << " ";
 
         solfile << i + 1;
         solfile << " ";
@@ -111,24 +111,24 @@ void SimulatedAnnealing::printSolution(vector<vector<vector<int> > > sol, vector
             for (int k = 0; k < sol[i][j].size(); k++) {
                 if (k == 0) {
                     solfile << "(";
-                    cout << "(";
+//                    cout << "(";
                 }
                 solfile << sol[i][j][k];
-                cout << sol[i][j][k];
+//                cout << sol[i][j][k];
                 if (k == 0) {
                     solfile << ",";
-                    cout << ",";
+//                    cout << ",";
                 }
                 if (k == 1) {
                     solfile << ") ";
-                    cout << ") ";
+//                    cout << ") ";
                 }
             }
         }
         solfile << "" << endl;
-        cout << "" << endl;
+//        cout << "" << endl;
     }
-    printBusesMaxDistance(qualityBuses);
+//    printBusesMaxDistance(qualityBuses);
 
     int max = returnMaxFromVector(qualityBuses);
     vector<int> busesMax;
@@ -145,7 +145,7 @@ void SimulatedAnnealing::printSolution(vector<vector<vector<int> > > sol, vector
 
     solfile << "" << endl;
 
-    printVector(c_shelters, c_shelters.size());
+//    printVector(c_shelters, c_shelters.size());
 
     for (int i = 0; i < c_shelters.size(); i++) {
         solfile << c_shelters[i] << endl;

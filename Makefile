@@ -8,7 +8,6 @@ config=instancias/ejemplo
 comp:$(prog)
 
 exe:$(prog)
-	#valgrind --leak-check=full --show-reachable=yes
 	./$(prog) $(config)
 
 $(prog): main.o SimulatedAnnealing.o Bep.o

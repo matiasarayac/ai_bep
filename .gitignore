@@ -6,3 +6,4 @@ main.o
 SA
 SimulatedAnnealing.o
 Bep.o
+results/
