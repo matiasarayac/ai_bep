@@ -18,9 +18,10 @@ int main () {
 
 //    generateTourRandom(b.getCollections(), b.getShelters());
 
-    SimulatedAnnealing sa;
-    sa.printSolution();
-    getQualitySol(b, sa.initial_sol);
+    SimulatedAnnealing sa(b);
+    sa.generateSolution(b);
+//    printSolution(sa.initial_sol);
+//    getQualitySol(b, sa.initial_sol);
 
     return 0;
 }

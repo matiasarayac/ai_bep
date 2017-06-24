@@ -4,5 +4,6 @@
 #include <sstream>
 #include <vector>
 #include <random>
+#include <math.h>
 
 using namespace std;

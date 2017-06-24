@@ -91,10 +91,8 @@ Bep::Bep(string instance) {
 
 void printVector(vector<int> v, int length) {
     for (int i = 0; i < length; i++) {
-        cout << v[i];
-        cout << " ";
+        cout << v[i] << endl;
     }
-    cout << "" << endl;
 }
 
 void printMatrix(vector<vector<int>> m) {
