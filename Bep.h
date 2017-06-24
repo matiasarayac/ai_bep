@@ -21,8 +21,8 @@ public:
     vector<int>sources_capacity;
     vector<int>p_collections;
     vector<int>shelters_capacity;
-    vector<vector<int>> d_sources_collections;
-    vector<vector<int>> d_collections_shelters;
+    vector<vector<int> > d_sources_collections;
+    vector<vector<int> > d_collections_shelters;
 
     Bep(string);
 
@@ -36,7 +36,7 @@ public:
 };
 
 void printVector(vector<int>, int);
-void printMatrix(vector<vector<int>>);
+void printMatrix(vector<vector<int> >);
 
 
 #endif //IA_SIMULATEDANNEALING_BEP_H

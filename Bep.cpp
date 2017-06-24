@@ -95,7 +95,7 @@ void printVector(vector<int> v, int length) {
     }
 }
 
-void printMatrix(vector<vector<int>> m) {
+void printMatrix(vector<vector<int> > m) {
     for (int i = 0; i < m.size(); i++) {
         for (int j = 0; j < m[i].size(); j++) {
             cout << m[i][j];

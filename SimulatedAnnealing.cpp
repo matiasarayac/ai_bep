@@ -5,7 +5,7 @@
 #include "SimulatedAnnealing.h"
 
 SimulatedAnnealing::SimulatedAnnealing(Bep b) {
-    vector<vector<int>> busesTour;
+    vector<vector<int> > busesTour;
     p_collections = b.p_collections;
     c_shelters = b.shelters_capacity;
 
@@ -45,7 +45,7 @@ SimulatedAnnealing::SimulatedAnnealing(Bep b) {
 
 //    printVector(busTour, busTour.size());
 
-    vector<vector<int>> v;
+    vector<vector<int> > v;
     int bus = 0;
 
     for (int j = 0; j < count; j++) {
@@ -86,10 +86,16 @@ int peopleInCollections(vector<int> collections, int length) {
     return 1; //There is no people left in collections
 }
 
-void SimulatedAnnealing::printSolution(vector<vector<vector<int>>> sol, vector<int> qualityBuses) {
+void SimulatedAnnealing::printSolution(vector<vector<vector<int> > > sol, vector<int> qualityBuses, Bep b) {
 
     ofstream solfile;
-    solfile.open("example.txt");
+    string file;
+    string sources = to_string(b.getSources());
+    string collections = to_string(b.getCollections());
+    string shelters = to_string(b.getShelters());
+    string buses = to_string(b.getBus());
+    file = "InstanceBEP-" + sources + "-" + collections + "-" + shelters +"-"+ buses + ".txt";
+    solfile.open(file);
 
     for (int i = 0; i < sol.size(); i++) {
         cout << i + 1;
@@ -148,7 +154,7 @@ void SimulatedAnnealing::printSolution(vector<vector<vector<int>>> sol, vector<i
     solfile.close();
 }
 
-int getQualitySol(Bep b, vector<vector<vector<int>>> sol) {
+int getQualitySol(Bep b, vector<vector<vector<int> > > sol) {
     vector<int> busSources;
     vector<int> distanceTotal;
     for (int i = 0; i < b.getSources(); i++) {
@@ -216,9 +222,9 @@ void SimulatedAnnealing::generateSolution(Bep b) {
     int count = 0;
     int it = 0;
     int reduceTemp = T / 10;
-    vector<vector<vector<int>>> current_sol = initial_sol;
-    vector<vector<vector<int>>> best_sol = initial_sol;
-    vector<vector<vector<int>>> new_sol;
+    vector<vector<vector<int> > > current_sol = initial_sol;
+    vector<vector<vector<int> > > best_sol = initial_sol;
+    vector<vector<vector<int> > > new_sol;
     double random;
     double e = 0;
     while (count < 100) {
@@ -284,13 +290,13 @@ void SimulatedAnnealing::generateSolution(Bep b) {
     }
 
     final_sol = best_sol;
-    printSolution(best_sol, getQualityBuses(b));
+    printSolution(best_sol, getQualityBuses(b), b);
 
 }
 
 //The swap works taking the last tour of the bus with more tours
 //And put it in other random bus
-vector<vector<vector<int>>> swapSolution(vector<vector<vector<int>>> sol, Bep b) {
+vector<vector<vector<int> > > swapSolution(vector<vector<vector<int> > > sol, Bep b) {
     int busMaxTours = 0;
     int maxTours = 0;
     int tours = 0;
@@ -325,7 +331,7 @@ vector<vector<vector<int>>> swapSolution(vector<vector<vector<int>>> sol, Bep b)
 
 }
 
-int differenceQuality(vector<vector<vector<int>>> current_sol, vector<vector<vector<int>>> new_sol, Bep b) {
+int differenceQuality(vector<vector<vector<int> > > current_sol, vector<vector<vector<int> > > new_sol, Bep b) {
     // We need to minimize the solution, so it's current - new
     return getQualitySol(b, current_sol) - getQualitySol(b, new_sol);
 }

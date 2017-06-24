@@ -2,3 +2,7 @@ cmake-build-debug/
 CMakeLists.txt
 .idea
 .DS_Store
+main.o
+SA
+SimulatedAnnealing.o
+Bep.o
