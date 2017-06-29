@@ -238,13 +238,6 @@ void SimulatedAnnealing::generateSolution(Bep b) {
             it++;
         }
 
-        // decrease temp each it iterations
-        if (i % 100 == 0 && i != 0) {
-            if (T - 10 >= 10) {
-                T -= 10;
-            }
-//            cout << i << endl;
-        }
 
 //        cout << T << endl;
 
