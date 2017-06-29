@@ -1,4 +1,4 @@
-flags=-Wno-deprecated -g -ggdb
+flags=-Wno-deprecated -g -ggdb -std=c++11
 comp=g++
 prog=SA
 
