@@ -218,7 +218,7 @@ void SimulatedAnnealing::generateSolution(Bep b) {
     int i = 0;
     int diff = 0;
     int collections = b.getCollections();
-    T = collections * 100;
+    T = collections * 10;
     int count = 0;
     int it = 0;
     int reduceTemp = T / 10;
