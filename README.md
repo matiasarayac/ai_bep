@@ -1,4 +1,4 @@
-# Artificial Inteligence Project - Bus Evacuation Problem using Algorithm Simulated Annealing
+# Artificial Inteligence Project - Bus Evacuation Problem using Algorithm: Simulated Annealing
 
 ## Compile 
 
@@ -28,7 +28,7 @@ You must create a folder with the name "results/" before execute the program. Al
 
 ## More Details
 
-Lenguage: C++ 11
-Initial Solution: Random
-Movement: Swap
-Representation of Solution: Matrix of vectors
+* Lenguage: C++ 11
+* Initial Solution: Random
+* Movement: Swap
+* Representation of Solution: Matrix of vectors
