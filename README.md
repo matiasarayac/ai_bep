@@ -15,7 +15,7 @@ make
 
 ```
 
-Examples:
+Example:
 
 ```
 ./SA InstanciasBEP/InstanceBEP-1-4-2-4.txt
@@ -31,4 +31,4 @@ You must create a folder with the name "results/" before execute the program. Al
 * Lenguage: C++ 11
 * Initial Solution: Random
 * Movement: Swap
-* Representation of Solution: Matrix of vectors
+* Solution Representation: Matrix of vectors
